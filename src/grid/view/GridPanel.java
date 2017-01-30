@@ -17,6 +17,8 @@ public class GridPanel extends JPanel
 	
 	public GridPanel(GridController baseController)
 	{
+		this.xLabel = new JLabel("X-Axis");
+		this.yLabel = new JLabel("Y-Axis");
 		
 	}
 	
