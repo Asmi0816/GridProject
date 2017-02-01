@@ -9,6 +9,7 @@ import javax.swing.*;
 public class GridFrame extends JFrame
 {
 	private GridController baseController;
+	
 	private GridPanel basePanel;
 	
 		public GridFrame (GridController baseController)
@@ -32,6 +33,13 @@ public class GridFrame extends JFrame
 			
 			
 		}
-	
+		public GridController getBaseController()
+		{
+			return baseController;
+		}
+		public void setBaseController(GridController baseController)
+		{
+			this.baseController = baseController;
+		}
 	
 }
