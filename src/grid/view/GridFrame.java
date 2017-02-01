@@ -25,7 +25,7 @@ public class GridFrame extends JFrame
 		{
 			
 			this.setContentPane(basePanel);
-			this.setTitle("Grid");
+			this.setTitle("Grid Title Of Funnnnn!!!!");
 			this.setSize(new Dimension(1080, 800));
 			this.setResizable(false);
 			
