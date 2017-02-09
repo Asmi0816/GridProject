@@ -20,9 +20,9 @@ public class GridPanel extends JPanel
 	private JLabel dontTouch;
 	private JLabel dontTouch2;
 	private JLabel myProject;
-	private JLabel footer;
-	private JComboBox xPosition;
-	private JComboBox yPosition;
+	private JTextField footer;
+	private JTextField xPosition;
+	private JTextField yPosition;
 	private JButton chooseButton;
 	
 	
@@ -32,12 +32,16 @@ public class GridPanel extends JPanel
 	public GridPanel(GridController baseController)
 	{
 		this.baseController = baseController;
-		this.xPosition = new JComboBox();
-		this.yPosition = new JComboBox();
+		this.xPosition = new JTextField(3);
+		this.yPosition = new JTextField(3);
 		this.xLabel = new JLabel("X-Axis");
 		this.yLabel = new JLabel("Y-Axis");
 		this.chooseButton = new JButton("Make your changes here");
 		this.baseLayout = new SpringLayout();
+		this.dontTouch = new JLabel("Don't look for anything here");
+		this.dontTouch2 = new JLabel("Type into the box what you want the box to say");
+		this.footer = new JTextField(20);
+
 		
 		
 		setupTable();
@@ -53,7 +57,7 @@ public class GridPanel extends JPanel
 		
 		gridTable.setModel(data);
 		gridPane = new JScrollPane();
-		baseLayout.putConstraint(SpringLayout.SOUTH, chooseButton, -6, SpringLayout.NORTH, gridPane);
+		
 		
 		gridPane.setViewportView(gridTable);
 		
@@ -69,22 +73,32 @@ public class GridPanel extends JPanel
 	this.add(xLabel);
 	this.add(yLabel);
 	this.add(chooseButton);
+	this.add(dontTouch);
+	this.add(dontTouch2);
+	this.add(footer);
 	}
 	private void setupLayout()
 	{
 		baseLayout.putConstraint(SpringLayout.WEST, gridPane, 34, SpringLayout.WEST, this);
 		baseLayout.putConstraint(SpringLayout.NORTH, gridPane, 57, SpringLayout.NORTH, this);
-		baseLayout.putConstraint(SpringLayout.SOUTH, gridPane, -15, SpringLayout.SOUTH, this);
 		baseLayout.putConstraint(SpringLayout.EAST, gridPane, -34, SpringLayout.EAST, this);
 		baseLayout.putConstraint(SpringLayout.WEST, yLabel, 102, SpringLayout.EAST, xLabel);
 		baseLayout.putConstraint(SpringLayout.NORTH, yLabel, 0, SpringLayout.NORTH, xLabel);
 		baseLayout.putConstraint(SpringLayout.NORTH, xLabel, 10, SpringLayout.NORTH, this);
 		baseLayout.putConstraint(SpringLayout.WEST, xLabel, 10, SpringLayout.WEST, this);
 		gridTable.setBackground(Color.WHITE);
+		baseLayout.putConstraint(SpringLayout.WEST, dontTouch2, 10, SpringLayout.WEST, this);
+		baseLayout.putConstraint(SpringLayout.WEST, dontTouch, 34, SpringLayout.WEST, this);
 		baseLayout.putConstraint(SpringLayout.NORTH, chooseButton, 9, SpringLayout.NORTH, this);
+		baseLayout.putConstraint(SpringLayout.NORTH, yPosition, 6, SpringLayout.NORTH, this);
 		baseLayout.putConstraint(SpringLayout.WEST, chooseButton, 97, SpringLayout.EAST, yLabel);
 		baseLayout.putConstraint(SpringLayout.EAST, chooseButton, -10, SpringLayout.EAST, this);
-		baseLayout.putConstraint(SpringLayout.NORTH, yPosition, 0, SpringLayout.NORTH, xPosition);
+		baseLayout.putConstraint(SpringLayout.NORTH, dontTouch2, 6, SpringLayout.SOUTH, gridPane);
+		baseLayout.putConstraint(SpringLayout.SOUTH, dontTouch, -6, SpringLayout.NORTH, gridPane);
+		baseLayout.putConstraint(SpringLayout.SOUTH, chooseButton, -6, SpringLayout.NORTH, gridPane);
+		baseLayout.putConstraint(SpringLayout.NORTH, footer, 0, SpringLayout.NORTH, dontTouch2);
+		baseLayout.putConstraint(SpringLayout.WEST, footer, 84, SpringLayout.EAST, dontTouch2);
+		baseLayout.putConstraint(SpringLayout.SOUTH, gridPane, -39, SpringLayout.SOUTH, this);
 		baseLayout.putConstraint(SpringLayout.WEST, yPosition, 11, SpringLayout.EAST, yLabel);
 		baseLayout.putConstraint(SpringLayout.NORTH, xPosition, -4, SpringLayout.NORTH, xLabel);
 		baseLayout.putConstraint(SpringLayout.WEST, xPosition, 6, SpringLayout.EAST, xLabel);
@@ -97,7 +111,368 @@ public class GridPanel extends JPanel
 		{
 			public void actionPerformed (ActionEvent click)
 			{
+				String xString = xPosition.getText();
+				String yString = yPosition.getText();
+				int xInt = Integer.parseInt(xString);
+				int yInt = Integer.parseInt(yString);
 				
+				if(xString.equals("1"))
+				{
+					if(yString.equals("1"))
+					{
+						gridTable.setValueAt(footer.getText(), xInt - 1, yInt - 1);
+					}
+					else if(yString.equals("2"))
+					{
+						gridTable.setValueAt(footer.getText(), xInt - 1, yInt - 1);
+					}
+					else if(yString.equals("3"))
+					{
+						gridTable.setValueAt(footer.getText(), xInt - 1, yInt - 1);
+					}
+					else if(yString.equals("4"))
+					{
+						gridTable.setValueAt(footer.getText(), xInt - 1, yInt - 1);
+					}
+					else if(yString.equals("5"))
+					{
+						gridTable.setValueAt(footer.getText(), xInt - 1, yInt - 1);
+					}
+					else if(yString.equals("6"))
+					{
+						gridTable.setValueAt(footer.getText(), xInt - 1, yInt - 1);
+					}
+					else if(yString.equals("7"))
+					{
+						gridTable.setValueAt(footer.getText(), xInt - 1, yInt - 1);
+					}
+					else if(yString.equals("8"))
+					{
+						gridTable.setValueAt(footer.getText(), xInt - 1, yInt - 1);
+					}
+					else if(yString.equals("9"))
+					{
+						gridTable.setValueAt(footer.getText(), xInt - 1, yInt - 1);
+					}
+				}
+				
+				else if(xString.equals("2"))
+				{
+					if(yString.equals("1"))
+					{
+						gridTable.setValueAt(footer.getText(), xInt - 1, yInt - 1);
+					}
+					else if(yString.equals("2"))
+					{
+						gridTable.setValueAt(footer.getText(), xInt - 1, yInt - 1);
+					}
+					else if(yString.equals("3"))
+					{
+						gridTable.setValueAt(footer.getText(), xInt - 1, yInt - 1);
+					}
+					else if(yString.equals("4"))
+					{
+						gridTable.setValueAt(footer.getText(), xInt - 1, yInt - 1);
+					}
+					else if(yString.equals("5"))
+					{
+						gridTable.setValueAt(footer.getText(), xInt - 1, yInt - 1);
+					}
+					else if(yString.equals("6"))
+					{
+						gridTable.setValueAt(footer.getText(), xInt - 1, yInt - 1);
+					}
+					else if(yString.equals("7"))
+					{
+						gridTable.setValueAt(footer.getText(), xInt - 1, yInt - 1);
+					}
+					else if(yString.equals("8"))
+					{
+						gridTable.setValueAt(footer.getText(), xInt - 1, yInt - 1);
+					}
+					else if(yString.equals("9"))
+					{
+						gridTable.setValueAt(footer.getText(), xInt - 1, yInt - 1);
+					}
+				}
+				else if(xString.equals("3"))
+				{
+					if(yString.equals("1"))
+					{
+						gridTable.setValueAt(footer.getText(), xInt - 1, yInt - 1);
+					}
+					else if(yString.equals("2"))
+					{
+						gridTable.setValueAt(footer.getText(), xInt - 1, yInt - 1);
+					}
+					else if(yString.equals("3"))
+					{
+						gridTable.setValueAt(footer.getText(), xInt - 1, yInt - 1);
+					}
+					else if(yString.equals("4"))
+					{
+						gridTable.setValueAt(footer.getText(), xInt - 1, yInt - 1);
+					}
+					else if(yString.equals("5"))
+					{
+						gridTable.setValueAt(footer.getText(), xInt - 1, yInt - 1);
+					}
+					else if(yString.equals("6"))
+					{
+						gridTable.setValueAt(footer.getText(), xInt - 1, yInt - 1);
+					}
+					else if(yString.equals("7"))
+					{
+						gridTable.setValueAt(footer.getText(), xInt - 1, yInt - 1);
+					}
+					else if(yString.equals("8"))
+					{
+						gridTable.setValueAt(footer.getText(), xInt - 1, yInt - 1);
+					}
+					else if(yString.equals("9"))
+					{
+						gridTable.setValueAt(footer.getText(), xInt - 1, yInt - 1);
+					}
+				}
+				else if(xString.equals("4"))
+				{
+					if(yString.equals("1"))
+					{
+						gridTable.setValueAt(footer.getText(), xInt - 1, yInt - 1);
+					}
+					else if(yString.equals("2"))
+					{
+						gridTable.setValueAt(footer.getText(), xInt - 1, yInt - 1);
+					}
+					else if(yString.equals("3"))
+					{
+						gridTable.setValueAt(footer.getText(), xInt - 1, yInt - 1);
+					}
+					else if(yString.equals("4"))
+					{
+						gridTable.setValueAt(footer.getText(), xInt - 1, yInt - 1);
+					}
+					else if(yString.equals("5"))
+					{
+						gridTable.setValueAt(footer.getText(), xInt - 1, yInt - 1);
+					}
+					else if(yString.equals("6"))
+					{
+						gridTable.setValueAt(footer.getText(), xInt - 1, yInt - 1);
+					}
+					else if(yString.equals("7"))
+					{
+						gridTable.setValueAt(footer.getText(), xInt - 1, yInt - 1);
+					}
+					else if(yString.equals("8"))
+					{
+						gridTable.setValueAt(footer.getText(), xInt - 1, yInt - 1);
+					}
+					else if(yString.equals("9"))
+					{
+						gridTable.setValueAt(footer.getText(), xInt - 1, yInt - 1);
+					}
+				}
+				else if(xString.equals("5"))
+				{
+					if(yString.equals("1"))
+					{
+						gridTable.setValueAt(footer.getText(), xInt - 1, yInt - 1);
+					}
+					else if(yString.equals("2"))
+					{
+						gridTable.setValueAt(footer.getText(), xInt - 1, yInt - 1);
+					}
+					else if(yString.equals("3"))
+					{
+						gridTable.setValueAt(footer.getText(), xInt - 1, yInt - 1);
+					}
+					else if(yString.equals("4"))
+					{
+						gridTable.setValueAt(footer.getText(), xInt - 1, yInt - 1);
+					}
+					else if(yString.equals("5"))
+					{
+						gridTable.setValueAt(footer.getText(), xInt - 1, yInt - 1);
+					}
+					else if(yString.equals("6"))
+					{
+						gridTable.setValueAt(footer.getText(), xInt - 1, yInt - 1);
+					}
+					else if(yString.equals("7"))
+					{
+						gridTable.setValueAt(footer.getText(), xInt - 1, yInt - 1);
+					}
+					else if(yString.equals("8"))
+					{
+						gridTable.setValueAt(footer.getText(), xInt - 1, yInt - 1);
+					}
+					else if(yString.equals("9"))
+					{
+						gridTable.setValueAt(footer.getText(), xInt - 1, yInt - 1);
+					}
+				}
+				else if(xString.equals("6"))
+				{
+					if(yString.equals("1"))
+					{
+						gridTable.setValueAt(footer.getText(), xInt - 1, yInt - 1);
+					}
+					else if(yString.equals("2"))
+					{
+						gridTable.setValueAt(footer.getText(), xInt - 1, yInt - 1);
+					}
+					else if(yString.equals("3"))
+					{
+						gridTable.setValueAt(footer.getText(), xInt - 1, yInt - 1);
+					}
+					else if(yString.equals("4"))
+					{
+						gridTable.setValueAt(footer.getText(), xInt - 1, yInt - 1);
+					}
+					else if(yString.equals("5"))
+					{
+						gridTable.setValueAt(footer.getText(), xInt - 1, yInt - 1);
+					}
+					else if(yString.equals("6"))
+					{
+						gridTable.setValueAt(footer.getText(), xInt - 1, yInt - 1);
+					}
+					else if(yString.equals("7"))
+					{
+						gridTable.setValueAt(footer.getText(), xInt - 1, yInt - 1);
+					}
+					else if(yString.equals("8"))
+					{
+						gridTable.setValueAt(footer.getText(), xInt - 1, yInt - 1);
+					}
+					else if(yString.equals("9"))
+					{
+						gridTable.setValueAt(footer.getText(), xInt - 1, yInt - 1);
+					}
+				}
+				else if(xString.equals("7"))
+				{
+					if(yString.equals("1"))
+					{
+						gridTable.setValueAt(footer.getText(), xInt - 1, yInt - 1);
+					}
+					else if(yString.equals("2"))
+					{
+						gridTable.setValueAt(footer.getText(), xInt - 1, yInt - 1);
+					}
+					else if(yString.equals("3"))
+					{
+						gridTable.setValueAt(footer.getText(), xInt - 1, yInt - 1);
+					}
+					else if(yString.equals("4"))
+					{
+						gridTable.setValueAt(footer.getText(), xInt - 1, yInt - 1);
+					}
+					else if(yString.equals("5"))
+					{
+						gridTable.setValueAt(footer.getText(), xInt - 1, yInt - 1);
+					}
+					else if(yString.equals("6"))
+					{
+						gridTable.setValueAt(footer.getText(), xInt - 1, yInt - 1);
+					}
+					else if(yString.equals("7"))
+					{
+						gridTable.setValueAt(footer.getText(), xInt - 1, yInt - 1);
+					}
+					else if(yString.equals("8"))
+					{
+						gridTable.setValueAt(footer.getText(), xInt - 1, yInt - 1);
+					}
+					else if(yString.equals("9"))
+					{
+						gridTable.setValueAt(footer.getText(), xInt - 1, yInt - 1);
+					}
+				}
+				else if(xString.equals("8"))
+				{
+					if(yString.equals("1"))
+					{
+						gridTable.setValueAt(footer.getText(), xInt - 1, yInt - 1);
+					}
+					else if(yString.equals("2"))
+					{
+						gridTable.setValueAt(footer.getText(), xInt - 1, yInt - 1);
+					}
+					else if(yString.equals("3"))
+					{
+						gridTable.setValueAt(footer.getText(), xInt - 1, yInt - 1);
+					}
+					else if(yString.equals("4"))
+					{
+						gridTable.setValueAt(footer.getText(), xInt - 1, yInt - 1);
+					}
+					else if(yString.equals("5"))
+					{
+						gridTable.setValueAt(footer.getText(), xInt - 1, yInt - 1);
+					}
+					else if(yString.equals("6"))
+					{
+						gridTable.setValueAt(footer.getText(), xInt - 1, yInt - 1);
+					}
+					else if(yString.equals("7"))
+					{
+						gridTable.setValueAt(footer.getText(), xInt - 1, yInt - 1);
+					}
+					else if(yString.equals("8"))
+					{
+						gridTable.setValueAt(footer.getText(), xInt - 1, yInt - 1);
+					}
+					else if(yString.equals("9"))
+					{
+						gridTable.setValueAt(footer.getText(), xInt - 1, yInt - 1);
+					}
+				}
+				else if(xString.equals("9"))
+				{
+					if(yString.equals("1"))
+					{
+						gridTable.setValueAt(footer.getText(), xInt - 1, yInt - 1);
+					}
+					else if(yString.equals("2"))
+					{
+						gridTable.setValueAt(footer.getText(), xInt - 1, yInt - 1);
+					}
+					else if(yString.equals("3"))
+					{
+						gridTable.setValueAt(footer.getText(), xInt - 1, yInt - 1);
+					}
+					else if(yString.equals("4"))
+					{
+						gridTable.setValueAt(footer.getText(), xInt - 1, yInt - 1);
+					}
+					else if(yString.equals("5"))
+					{
+						gridTable.setValueAt(footer.getText(), xInt - 1, yInt - 1);
+					}
+					else if(yString.equals("6"))
+					{
+						gridTable.setValueAt(footer.getText(), xInt - 1, yInt - 1);
+					}
+					else if(yString.equals("7"))
+					{
+						gridTable.setValueAt(footer.getText(), xInt - 1, yInt - 1);
+					}
+					else if(yString.equals("8"))
+					{
+						gridTable.setValueAt(footer.getText(), xInt - 1, yInt - 1);
+					}
+					else if(yString.equals("9"))
+					{
+						gridTable.setValueAt(footer.getText(), xInt - 1, yInt - 1);
+					}
+				}
+				
+				else
+				{
+					System.out.println("not possible try again");
+				}
 			}
 		});
 	}
