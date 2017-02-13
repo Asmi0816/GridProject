@@ -115,7 +115,7 @@ public class GridPanel extends JPanel
 				String yString = yPosition.getText();
 				int xInt = Integer.parseInt(xString);
 				int yInt = Integer.parseInt(yString);
-				if(yInt > 10 || xInt > 10 || xInt < 1 || yInt < 1)
+				if(yInt < 10 || xInt < 10 || xInt > 1 || yInt > 1)
 				{
 				gridTable.setValueAt(footer.getText(), xInt - 1, yInt - 1);
 				}
