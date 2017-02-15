@@ -34,8 +34,8 @@ public class GridPanel extends JPanel
 		this.baseController = baseController;
 		this.xPosition = new JTextField(3);
 		this.yPosition = new JTextField(3);
-		this.xLabel = new JLabel("X-Axis");
-		this.yLabel = new JLabel("Y-Axis");
+		this.xLabel = new JLabel("Y-Axis");
+		this.yLabel = new JLabel("X-Axis");
 		this.chooseButton = new JButton("Make your changes here");
 		this.baseLayout = new SpringLayout();
 		this.dontTouch = new JLabel("Don't look for anything here");
